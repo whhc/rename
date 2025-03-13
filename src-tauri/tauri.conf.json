@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "Rename",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "tauri": {
     "allowlist": {
@@ -29,8 +29,10 @@
     "windows": [
       {
         "title": "Rename",
-        "width": 1200,
-        "height": 800,
+        "width": 1280,
+        "height": 720,
+        "minWidth": 1280,
+        "minHeight": 720,
         "fileDropEnabled": false
       }
     ],

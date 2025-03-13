@@ -10,16 +10,16 @@ type FormatedItem = {
 type ListItem = Omit<FormatedItem, "renamed" | "code">;
 
 enum FormatType {
-  Join,
-  Remove,
-  RemoveReg,
-  Prepend,
-  Append,
-  Replace,
-  ReplaceReg,
-  FormatWord,
-  TimestampStart,
-  TimestampEnd,
+  Join = "Join",
+  Remove = "Remove",
+  RemoveReg = "RemoveReg",
+  Prepend = "Prepend",
+  Append = "Append",
+  Replace = "Replace",
+  ReplaceReg = "ReplaceReg",
+  FormatWord = "FormatWord",
+  TimestampStart = "TimestampStart",
+  TimestampEnd = "TimestampEnd",
 }
 
 enum FormatWordType {
@@ -28,8 +28,12 @@ enum FormatWordType {
   UpperCase = "UpperCase",
 }
 
+// type RuleType = keyof typeof FormatType;
+// FormatType中的所有value成为一个联合类型
+type RuleType = typeof FormatType[keyof typeof FormatType];
+
 interface RuleItem {
-  type: keyof typeof FormatType;
+  type: RuleType;
   value?: FormatWordType | string;
   replaced?: string;
   regFlags?: string;

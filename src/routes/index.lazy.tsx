@@ -1,11 +1,13 @@
-import { createLazyFileRoute, useNavigate } from "@tanstack/react-router";
+import { createLazyFileRoute } from "@tanstack/react-router";
+import { RenamePanel } from "../components/RenamePanel";
 
 export const Route = createLazyFileRoute("/")({
   component: () => <Index />,
 });
 
 function Index() {
-  const navigate = useNavigate();
-  navigate({ to: "/select" });
-  return <div></div>;
+
+  return <div>
+    <RenamePanel />
+  </div>;
 }
