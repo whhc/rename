@@ -135,12 +135,6 @@ export const RenamePanel: React.FC = () => {
                             onDrop={async (e) => {
                                 e.preventDefault();
                                 e.currentTarget.classList.remove('bg-blue-50', 'border-blue-300');
-                                // const newFiles = Array.from(e.dataTransfer.files).map(file => ({
-                                //     originalName: file.name,
-                                //     newName: file.name,
-                                //     status: 'pending' as const
-                                // }));
-                                // setFiles(prev => [...prev, ...newFiles]);
                             }}
                         >
                             <div className="text-center">

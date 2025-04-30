@@ -52,7 +52,7 @@ export const FileList: React.FC<FileListProps> = ({ files, onClear, selectedRule
             if (item) {
                 switch (item.type) {
                     case "Join":
-                        join_str = item.value || "";
+                        join_str = item.value || " ";
                         break;
                     case "FormatWord":
                         if (item.value === "CamelCase") {
@@ -165,7 +165,6 @@ export const FileList: React.FC<FileListProps> = ({ files, onClear, selectedRule
     };
 
     const handleRename = async () => {
-        console.log('开始重命名', selectedFiles);
         let result = (await invoke("rename", { list: formatedList })) as string;
         let resultList = JSON.parse(result);
         let newList = formatedList.map((item) => {
@@ -181,9 +180,7 @@ export const FileList: React.FC<FileListProps> = ({ files, onClear, selectedRule
             };
         });
 
-        console.log(newList.map(item => item.path));
         updateFiles(newList);
-        // setSelectedFiles(new Set());
         clearRuleId()
     };
 

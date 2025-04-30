@@ -8,7 +8,8 @@ export function split(str?: string) {
     return splitWords(str);
   }
 
-  return str.split(/[^A-Za-z0-9]/).map((item) => item.toLowerCase());
+  console.log(str);
+  return str.split(/[\s\-\_]/).map((item) => item.toLowerCase());
 }
 
 export function splitPascalCase(word: string) {
