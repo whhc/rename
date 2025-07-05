@@ -19,7 +19,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     // <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router} />,
     // </React.StrictMode>
   );
 }

@@ -8,7 +8,6 @@ export function split(str?: string) {
     return splitWords(str);
   }
 
-  console.log(str);
   return str.split(/[\s\-\_]/).map((item) => item.toLowerCase());
 }
 
